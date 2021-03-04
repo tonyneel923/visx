@@ -3,6 +3,7 @@ import { CityTemperature } from '@visx/mock-data/lib/mocks/cityTemperature';
 
 import ExampleControls from './ExampleControls';
 import CustomChartBackground from './CustomChartBackground';
+import BarRounded from '../../../../visx-shape/lib/shapes/BarRounded';
 
 export type XYChartProps = {
   width: number;
@@ -96,6 +97,7 @@ export default function Example({ height }: XYChartProps) {
                 data={data}
                 xAccessor={accessors.x['New York']}
                 yAccessor={accessors.y['New York']}
+                BarsComponent={(props) => <BarRounded {...props} radius={5} top={true} />}
               />
               <BarSeries
                 dataKey="San Francisco"
@@ -143,6 +145,11 @@ export default function Example({ height }: XYChartProps) {
               xAccessor={accessors.x['New York']}
               yAccessor={accessors.y['New York']}
               colorAccessor={colorAccessorFactory('New York')}
+              BarsComponent={({ bars }) => {
+                return bars.map((barProps) => (
+                  <BarRounded {...barProps} radius={3} top={true} />
+                ))
+              }}
             />
           )}
           {renderAreaSeries && (
