@@ -1,11 +1,11 @@
 import { AxisScale } from '@visx/axis';
 import React from 'react';
-import BaseBarSeries, { BaseBarSeriesProps } from './private/BaseBarSeries';
-import Bars from './private/Bars';
-import { BarsProps } from '../../types';
 import { ValueOf } from '@visx/scale';
 import { ScaleTypeToD3Scale } from '@visx/scale';
 import { AxisScaleOutput } from '@visx/axis';
+import BaseBarSeries, { BaseBarSeriesProps } from './private/BaseBarSeries';
+import Bars from './private/Bars';
+import { BarsProps } from '../../types';
 
 function BarSeries<XScale extends AxisScale, YScale extends AxisScale, Datum extends object>({
   colorAccessor,
