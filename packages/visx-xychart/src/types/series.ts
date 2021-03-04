@@ -34,8 +34,6 @@ export type SeriesProps<
   xAccessor: (d: Datum) => ScaleInput<XScale>;
   /** Given a Datum, returns the y-scale value. */
   yAccessor: (d: Datum) => ScaleInput<YScale>;
-  // /** Rendered component which is passed BarsProps by BaseBarSeries after processing. */
-  BarsComponent?: React.FC<BarsProps<XScale, YScale>>;
   /**
    * Callback invoked for onPointerMove events for the nearest Datum to the PointerEvent.
    * By default XYChart will capture and emit PointerEvents, invoking this function for
